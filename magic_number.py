@@ -37,7 +37,10 @@ class Game:
         self.game_results()
 
     def game_results(self):
-        pass
+        if self.player.my_number == self.computer.my_number:
+            print(f"{self.player} you win!")
+        else:
+            print(f"{self.player} you lost")
 
 class Computer:
     def __init__(self):
