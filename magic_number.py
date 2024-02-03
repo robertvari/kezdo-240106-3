@@ -33,6 +33,9 @@ class Player:
         self.name = "Robert"
         self.credits = 100
 
+    def __str__(self) -> str:
+        return self.name
+
 
 game = Game()
 game.start()
