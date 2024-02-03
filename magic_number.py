@@ -27,11 +27,37 @@ class Game:
         self.computer.think_a_number()
         self.player.think_a_number()
 
+        while self.computer.check_number(self.player):
+            if self.computer.do_player_has_tries(self.player):
+                break
+
+            print(f"Wrong, try again. You have {self.computer.max_tries} left.")
+            self.player.think_a_number()
+        
+        self.game_results()
+
+    def game_results(self):
+        pass
+
 class Computer:
     def __init__(self):
         self.max_number = 10
         self.my_number = "0"
         self.max_tries = 3
+    
+    def check_number(self, player):
+        if player.my_number != self.my_number:
+            self.max_tries -= 1
+            return True
+        
+        return False
+
+    def do_player_has_tries(self, player):
+        if self.max_tries == 0:
+            player.credits -= 10
+            print(f"You lose 10 credits. You have {player.credits} credits left")
+            return True
+        return False
     
     def think_a_number(self):
         self.my_number = str(random.randint(1, self.max_number))
