@@ -14,7 +14,5 @@ csaba = Person("Csaba", 22, "Pécs")
 kriszta = Person("Kriszta", 25, "Bodapest")
 balazs = Person("Balázs", 20, "Debrecen")
 
-print(csaba)
-
 my_friends = [csaba, kriszta, balazs]
 print(my_friends)
