@@ -1,4 +1,6 @@
 import os
+from game_assets.cards import Deck
+
 
 class Blackjack:
     def __init__(self):
@@ -15,7 +17,7 @@ class Blackjack:
         # todo create a Player
         self.__player = None
 
-        self.__clear_screen()
+        # self.__clear_screen()
         self.__intro()
 
         # todo start first turn
@@ -30,5 +32,6 @@ class Blackjack:
 
     def __clear_screen(self):
         os.system("cls")
+
 
 Blackjack()
