@@ -26,11 +26,32 @@ class Blackjack:
         self.__round()
 
     def __round(self):
+        self.__deck.reset()
+
         for player in self.__player_list:
             player.init_hand(self.__deck)
 
         for player in self.__player_list:
             player.draw(self.__deck)
+
+        self.__finish_round()
+
+    def __finish_round(self):
+        winner_list = [i for i in self.__player_list if i.hand_value <= 21]
+
+        if not winner_list:
+            print("House wins")
+        else:
+            sorted_winner_list = sorted(winner_list, key=lambda player: player.hand_value)
+            winner = sorted_winner_list[-1]
+
+            print(f"The winner is: {winner}")
+
+        response = input("Do you want another round? (y/n)")
+        if response == "y":
+            self.__round()
+        
+        print("Have a nice day!")
 
     # private method
     def __intro(self):
