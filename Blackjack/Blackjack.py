@@ -6,7 +6,6 @@ class Blackjack:
     def __init__(self):
         self.__reward = 0
         self.__min_bet = 10
-        self.__player_list = []
 
         # create a deck of cards
         self.__deck = Deck()
@@ -18,17 +17,20 @@ class Blackjack:
         self.__player = Player()
 
         # collect players
-        self.__player_list.append(self.__ai_player)
-        self.__player_list.append(self.__player)
+        self.__player_list = [self.__ai_player, self.__player]
 
         # self.__clear_screen()
         self.__intro()
 
-        # todo start first turn
-        self.__game_loop()
+        # todo start first round
+        self.__round()
 
-    def __game_loop(self):
-        pass
+    def __round(self):
+        for player in self.__player_list:
+            player.init_hand(self.__deck)
+
+        for player in self.__player_list:
+            player.draw(self.__deck)
 
     # private method
     def __intro(self):

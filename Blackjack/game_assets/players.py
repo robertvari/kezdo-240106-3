@@ -16,7 +16,7 @@ class PlayerBASE:
         self.__playing = True
 
         self.__hand.append(deck.draw())
-        
+
         new_card = deck.draw()
         if self.hand_value > 10 and new_card.value == 11:
             new_card.change_value()
@@ -114,5 +114,3 @@ if __name__ == "__main__":
 
     for player in player_list:
         player.draw(deck)
-
-    pass
