@@ -50,8 +50,8 @@ class Blackjack:
         response = input("Do you want another round? (y/n)")
         if response == "y":
             self.__round()
-        
-        print("Have a nice day!")
+        else:
+            print("Have a nice day!")
 
     # private method
     def __intro(self):
