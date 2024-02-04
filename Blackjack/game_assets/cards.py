@@ -27,7 +27,25 @@ class Deck:
         self.__create()
 
     def __create(self):
-        pass
+        self.__cards.clear()
+
+        cards = [
+            ["2", 2],
+            ["3", 3],
+            ["4", 4],
+            ["5", 5],
+            ["6", 6],
+            ["7", 7],
+            ["8", 8],
+            ["9", 9],
+            ["10", 10],
+            ["King", 10],
+            ["Queen", 10],
+            ["Jack", 10],
+            ["Ace", 11]
+        ]
+
+        suits = ["Heart", "Club", "Diamond", "Spade"]
     
     def reset(self):
         """
@@ -44,6 +62,3 @@ class Deck:
 if __name__ == "__main__":
     deck = Deck()
     deck.show()
-
-    # play a round of Blackjack...
-    deck.reset()
