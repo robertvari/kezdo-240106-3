@@ -22,8 +22,28 @@ class Card:
 
 
 class Deck:
-    pass
+    def __init__(self):
+        self.__cards = []
+        self.__create()
 
+    def __create(self):
+        pass
+    
+    def reset(self):
+        """
+        Create a new deck of cards for a new round
+        """
+        self.__create()
+
+    def show(self):
+        """
+        Display the list of cards in the terminal
+        """
+        print(self.__cards)
 
 if __name__ == "__main__":
-    pass
+    deck = Deck()
+    deck.show()
+
+    # play a round of Blackjack...
+    deck.reset()
