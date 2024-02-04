@@ -9,7 +9,7 @@ class Blackjack:
         self.__player_list = []
 
         # todo create a deck of cards
-        self.__deck = None
+        self.__deck = Deck()
 
         # todo create an AI Player
         self.__ai_player = None
