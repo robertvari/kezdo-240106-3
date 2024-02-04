@@ -1,6 +1,6 @@
 import os
 from game_assets.cards import Deck
-
+from game_assets.players import AIPlayer, Player
 
 class Blackjack:
     def __init__(self):
@@ -8,14 +8,18 @@ class Blackjack:
         self.__min_bet = 10
         self.__player_list = []
 
-        # todo create a deck of cards
+        # create a deck of cards
         self.__deck = Deck()
 
-        # todo create an AI Player
-        self.__ai_player = None
+        # create an AI Player
+        self.__ai_player = AIPlayer()
 
-        # todo create a Player
-        self.__player = None
+        # create a Player
+        self.__player = Player()
+
+        # collect players
+        self.__player_list.append(self.__ai_player)
+        self.__player_list.append(self.__player)
 
         # self.__clear_screen()
         self.__intro()

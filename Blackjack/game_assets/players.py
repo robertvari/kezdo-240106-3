@@ -29,13 +29,10 @@ class AIPlayer(PlayerBASE):
 class Player(PlayerBASE):
     # we override PlayerBASE._create
     def _create(self):
-        super()._create()
+        super()._create()  # calls parent's _create() method
         self._name = input("What is your name?")
 
 
 if __name__ == "__main__":
     ai_player = AIPlayer()
     player = Player()
-
-    print(ai_player)
-    print(player)
