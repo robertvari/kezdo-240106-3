@@ -86,6 +86,8 @@ class Player(PlayerBASE):
                 new_card = deck.draw()
                 print(f"Your new card: {new_card}")
                 time.sleep(3)
+            else:
+                self.playing = False
 
 
 if __name__ == "__main__":
