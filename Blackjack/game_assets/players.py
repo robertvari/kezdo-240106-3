@@ -16,7 +16,12 @@ class PlayerBASE:
         self.__playing = True
 
         self.__hand.append(deck.draw())
-        self.__hand.append(deck.draw())
+        
+        new_card = deck.draw()
+        if self.hand_value > 10 and new_card.value == 11:
+            new_card.change_value()
+
+        self.__hand.append(new_card)
 
     def draw(self, deck):
         while self.__playing:
@@ -34,6 +39,9 @@ class PlayerBASE:
     def _create(self):
         self._credits = random.randint(10, 100)
         self._name = self.__get_random_name()
+
+    def _add_card_to_hand(self, new_card):
+        self.__hand.append(new_card)
 
     # privates
     def __get_random_name(self) -> str:
@@ -85,6 +93,7 @@ class Player(PlayerBASE):
             if response == "y":
                 new_card = deck.draw()
                 print(f"Your new card: {new_card}")
+                self._add_card_to_hand(new_card)
                 time.sleep(3)
             else:
                 self.playing = False
