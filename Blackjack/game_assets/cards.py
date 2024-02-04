@@ -1,3 +1,5 @@
+import random
+
 class Card:
     def __init__(self, name: str, value: int):
         self.__name = name
@@ -19,7 +21,6 @@ class Card:
 
     def __repr__(self) -> str:
         return self.__name
-
 
 class Deck:
     def __init__(self):
@@ -53,6 +54,9 @@ class Deck:
                 card_value = card[1]
                 new_card = Card(card_name, card_value)
                 self.__cards.append(new_card)
+        
+        # shuffle cards
+        random.shuffle(self.__cards)
     
     def reset(self):
         """
@@ -68,4 +72,3 @@ class Deck:
 
 if __name__ == "__main__":
     deck = Deck()
-    deck.show()
