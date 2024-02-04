@@ -58,6 +58,9 @@ class Deck:
         # shuffle cards
         random.shuffle(self.__cards)
     
+    def draw(self):
+        return self.__cards.pop(0)
+
     def reset(self):
         """
         Create a new deck of cards for a new round
@@ -70,5 +73,6 @@ class Deck:
         """
         print(self.__cards)
 
+
 if __name__ == "__main__":
-    deck = Deck()
+    pass
